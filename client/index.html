@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRDT Collaborative Code Editor</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="brand-mark">RGA</span>
+          <span class="brand-title">Collaborative Code Editor</span>
+        </div>
+        <div class="room-pill">
+          <span class="room-label">Room</span>
+          <span id="room-id" class="room-id"></span>
+        </div>
+        <button id="share-button" class="share-button" type="button">Share</button>
+        <div class="peer-summary" aria-live="polite">
+          <div id="peer-dots" class="peer-dots"></div>
+          <span id="peer-count">1</span>
+        </div>
+      </header>
+
+      <main class="main-area">
+        <section
+          id="editor"
+          class="editor"
+          tabindex="0"
+          contenteditable="false"
+          spellcheck="false"
+          aria-label="Collaborative code editor"
+        >
+          <div id="editor-scroll" class="editor-scroll">
+            <div id="editor-canvas" class="editor-canvas">
+              <div id="editor-lines" class="editor-lines"></div>
+              <div id="remote-cursor-layer" class="remote-cursor-layer"></div>
+              <div id="local-caret" class="local-caret"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="status-bar">
+        <div class="connection-state">
+          <span id="status-dot" class="status-dot is-connecting"></span>
+          <span id="status-text">Connecting...</span>
+        </div>
+        <div id="peer-list" class="peer-list"></div>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

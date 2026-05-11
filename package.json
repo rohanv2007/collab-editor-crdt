@@ -1,0 +1,16 @@
+{
+  "name": "collab-editor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "node server/index.js",
+    "client": "npx serve client -p 3000",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "ws": "^8.0.0",
+    "uuid": "^9.0.0",
+    "nanoid": "^3.0.0",
+    "concurrently": "^8.0.0"
+  }
+}

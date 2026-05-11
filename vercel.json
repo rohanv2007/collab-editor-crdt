@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/src/:path*",
+      "destination": "/client/src/:path*"
+    },
+    {
+      "source": "/styles/:path*",
+      "destination": "/client/styles/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/client/index.html"
+    }
+  ]
+}
